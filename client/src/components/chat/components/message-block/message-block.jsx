@@ -10,7 +10,7 @@ export const MessageBlock = ({socket}) => {
       socket.emit('message', {
         text: message,
         name: localStorage.getItem('user'),
-        id: `${socket.id}`,
+        id: `${socket.id}-${Math.random}`,
         socketID: socket.id,
       })
     }

@@ -19,14 +19,14 @@ export const Body = ({ messages }) => {
       <div className={styles.container}>
         {messages.map((element) =>
           element.name === localStorage.getItem("user") ? (
-            <div className={styles.chats}>
+            <div className={styles.chats} key={element.id}>
               <p className={styles.senderName}>Вы</p>
               <div className={styles.messageSender}>
                 <p>{element.text}</p>
               </div>
             </div>
           ) : (
-            <div className={styles.chats}>
+            <div className={styles.chats} key={element.id}>
               <p>{element.name}</p>
               <div className={styles.messageRecipient}>
                 <p>{element.text}</p>

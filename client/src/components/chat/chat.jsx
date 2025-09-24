@@ -9,7 +9,7 @@ export const ChatPage = ({ socket }) => {
 
   useEffect(() => {
     socket.on("response", (data) => setMessages([...messages, data]));
-  }, []);
+  }, [socket, messages]);
 
   return (
     <div className={styles.chat}>
