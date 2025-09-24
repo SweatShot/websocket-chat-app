@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./styles.module.css";
 
-export const Body = ({ messages }) => {
+export const Body = ({ messages, status }) => {
   const navigate = useNavigate();
 
   const handleLeave = () => {
@@ -34,6 +34,9 @@ export const Body = ({ messages }) => {
             </div>
           )
         )}
+        <div className={styles.status}>
+          <p>{status}</p>
+        </div>
       </div>
     </>
   );
