@@ -13,7 +13,7 @@ export const ChatPage = ({ socket }) => {
 
   return (
     <div className={styles.chat}>
-      <Sidebar />
+      <Sidebar socket={socket} />
       <main className={styles.main}>
         <Body messages={messages} />
         <MessageBlock socket={socket} />
