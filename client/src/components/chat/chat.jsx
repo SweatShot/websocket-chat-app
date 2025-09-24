@@ -1,6 +1,6 @@
-import { Body } from "./components/body"
-import { MessageBlock } from "./components/message-block"
-import { Sidebar } from "./components/sidebar"
+import { Body } from "./components/body/body"
+import { MessageBlock } from "./components/message-block/message-block"
+import { Sidebar } from "./components/sidebar/sidebar"
 
 export const ChatPage = ({socket}) => {
   return (
