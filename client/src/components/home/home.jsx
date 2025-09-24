@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import styles from "./styles.module.css"
 
 export const Home = ({ socket }) => {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ export const Home = ({ socket }) => {
     navigate("/chat");
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.container}>
       <h2>Входит в чат</h2>
       <label htmlFor="user"></label>
       <input
@@ -19,8 +20,9 @@ export const Home = ({ socket }) => {
         id="user"
         value={user}
         onChange={(e) => setUser(e.target.value)}
+        className={styles.userInput}
       />
-      <button type="submit">Войти</button>
+      <button type="submit" className={styles.homeBtn}>Войти</button>
     </form>
   );
 };
