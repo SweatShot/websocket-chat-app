@@ -1,21 +1,23 @@
+import styles from "./styles.module.css"
+
 export const Body = () => {
   return (
     <>
-      <header className="header">
-        <button className="btn">Покинуть чат</button>
+      <header className={styles.header}>
+        <button className={styles.btn}>Покинуть чат</button>
       </header>
 
-      <div className="container">
-        <div className="chats">
-          <p>Вы</p>
-          <div className="message-sender">
+      <div className={styles.container}>
+        <div className={styles.chats}>
+          <p className={styles.senderName}>Вы</p>
+          <div className={styles.messageSender}>
             <p>Hello</p>
           </div>
         </div>
         
-        <div className="chats">
+        <div className={styles.chats}>
           <p>Вы</p>
-          <div className="message-recipient">
+          <div className={styles.messageRecipient}>
             <p>Hello</p>
           </div>
         </div>

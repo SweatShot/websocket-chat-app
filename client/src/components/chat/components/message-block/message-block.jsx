@@ -1,3 +1,5 @@
+import styles from "./styles.module.css"
+
 export const MessageBlock = () => {
   return (
     <div className="message-block">
