@@ -1,13 +1,20 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./styles.module.css";
+import { Message } from "@/types/types";
 
-export const Body = ({ messages, status }) => {
+interface BodyProps {
+  messages: Message[];
+  status: string;
+}
+
+export const Body: React.FC<BodyProps> = ({ messages, status }) => {
   const navigate = useNavigate();
 
   const handleLeave = () => {
     localStorage.removeItem("user");
     navigate("/");
   };
+
   return (
     <>
       <header className={styles.header}>

@@ -1,12 +1,21 @@
 import { useEffect, useState } from "react";
+import { Socket } from "socket.io-client";
 import styles from "./styles.module.css";
+import { User } from "@/types/types";
 
-export const Sidebar = ({ socket }) => {
-  const [users, setUsers] = useState([]);
+interface SidebarProps {
+  socket: Socket;
+}
+
+export const Sidebar: React.FC<SidebarProps> = ({ socket }) => {
+  const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
-    socket.on("responseNewUser", (data) => setUsers(data));
-  }, [socket, users]);
+    socket.on("responseNewUser", (data: User[]) => setUsers(data));
+    return () => {
+      socket.off("responseNewUser");
+    };
+  }, [socket]);
 
   const filteredList = users.filter(
     (value, index, self) =>
